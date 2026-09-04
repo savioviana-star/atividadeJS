@@ -12,7 +12,8 @@ function calcular_horas_minutos_segundos() {
 calcular_horas_minutos_segundos();
 
 function celsius_para_fahrenheit_e_kelvin() {
-    let celsius = 25;
+    const prompt = require('prompt-sync')();
+    let celsius = parseFloat(prompt("Digite a temperatura em Celsius: "));
     let fahrenheit = (celsius * 9/5) + 32;
     let kelvin = celsius + 273.15;
 
@@ -45,7 +46,11 @@ function desconto_progressivo() {
 desconto_progressivo();
 
 function pode_votar_servico_militar() {
-    let dataNascimento = new Date('2000-01-01');
+    const prompt = require('prompt-sync')();
+    let anoNascimento = parseInt(prompt("Digite o ano de nascimento:"));
+    let mesNascimento = parseInt(prompt("Digite o mês de nascimento (1-12):"));
+    let diaNascimento = parseInt(prompt("Digite o dia de nascimento (1-31):"));
+    let dataNascimento = new Date(anoNascimento, mesNascimento - 1, diaNascimento);
     let dataAtual = new Date();
     let idade = dataAtual.getFullYear() - dataNascimento.getFullYear();
     let mes = dataAtual.getMonth() - dataNascimento.getMonth();
